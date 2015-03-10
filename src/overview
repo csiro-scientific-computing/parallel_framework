@@ -1,0 +1,46 @@
+The IDL Job Parallel Framework provides a framework for generating scripts that
+run parallel IDL or GDL jobs on a parallel platform. The *job* is defined via a
+user specified task list and pre-processing, processing, and post-processing
+worker functions that process the tasks. It aims to work independently of
+platform architecture, OS, or job management software.
+
+Platform specific job generation is achieved through plugin modules that create
+jobs files for a particular platform.
+
+The parallel job files can be generated on any computer by the framework and
+plugins, then saved or copied onto the target parallel platform where they can
+be run.
+
+The framework aims to support two levels of parallelism:
+
+1. **Job parallelism**, by running *independent* application tasks simultaneously
+   (in parallel) using multiple *independent* IDL processes, running on
+   different processor cores, potentially on different hosts. This could
+   include sub-tasks resulting from task subdivision.
+
+2. **Shared memory intra-task parallelism**, by supporting worker functions that
+   utilise multiple threads (processes) to *cooperatively* process a *single*
+   application task, within a *single* host computer.
+
+**Note** that distributed memory (multi-host) intra-task parallelism (e.g. MPI style)
+is not currently supported.
+
+Two important implications to note about these points:
+
+1. The framework assumes that specified application tasks are *independent* of
+   each other, and will not produce erroneous result when run concurrently.
+
+2. The framework will **not** automatically parallelize processing of *single*
+   application tasks, it only allows for the case that a worker function
+   already has parallel or multi-threading capabilities built in.
+
+:Dirs:
+    ./
+        Contains Framework User API functions.
+    plugins/
+        Contains plugins that can be loaded into the framework for platform
+        specific job generation.
+
+:Author:
+    Luke Domanski, CSIRO Scientific Computing Service (2014)
+

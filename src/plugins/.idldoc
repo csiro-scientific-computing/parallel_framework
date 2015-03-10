@@ -1,0 +1,24 @@
+
+.. title:: Plugins
+
+Job Generator Plugins for the IDL Job Parallel Framework
+========================================================
+Job generator plugins can be loaded for use with the IDL Job Parallel Framework
+to output job files supporting different parallel platforms.
+
+Users
+-----
+Users can load a plugin into the Framework by passing it's plugin ident to the
+`load_generator_plugin` proceedure. See individual plugin description for
+details and plugin ident.
+
+Developers
+----------
+Developers wishing to support a particular parallel (or serial) platform
+through the Framework can write their own plugins as described in the
+`Writing Plugins` documentation.
+
+:Author:
+    Luke Domanski, CSIRO Advanced Scientific Computing (2014)
+
+

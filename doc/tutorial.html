@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<title></title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7056 2011-06-17 10:50:48Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document">
+
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name" colspan="2">Document Author:</th></tr>
+<tr class="field"><td>&nbsp;</td><td class="field-body">Luke Domanski, CSIRO, IM&amp;T, Scientific Computing</td>
+</tr>
+<tr class="field"><th class="docinfo-name" colspan="2">Document Format:</th></tr>
+<tr class="field"><td>&nbsp;</td><td class="field-body">This document was written in <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>. There a
+numerous converters and generators for <a class="reference external" href="http://docutils.sourceforge.net/docs/user/links.html#export">exporting from
+reStructuredText</a> to pretty document formats.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="using-the-parallel-framework">
+<h1>Using the Parallel Framework</h1>
+<div class="section" id="preface">
+<h2>Preface</h2>
+<p>This document gives a tutorial style overview of Job Parallel Framework usage.</p>
+<p>For a brief listing of the most common usage commands see the <a href="#id1"><span class="problematic" id="id2">`Quick
+Reference`_</span></a>. For detailed technical information, see the <a href="#id3"><span class="problematic" id="id4">`User Guide`_</span></a> and
+<a href="#id5"><span class="problematic" id="id6">`Reference Guide`_</span></a>.</p>
+<p>Where noted, examples from this document (including interactive commands) can be
+found in the <tt class="docutils literal">example/tutorial</tt> directory of the Job Parallel Framework
+distribution, and assume that this is your current working directory.</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview</h2>
+<p>Using the parallel framework requires three main steps:</p>
+<ol class="arabic simple">
+<li>Developing a user defined worker task function(s) in IDL; the application
+that gets run in parallel on the compute machine.</li>
+<li>Generating a parallel job using the Job Parallel Framework API</li>
+<li>Placing and running the parallel job on the compute machine</li>
+</ol>
+<p>Before calling any Framework functions, you must run the framework loader
+procedure to initialise your IDL or GDL session:</p>
+<pre class="literal-block">
+load_par_framework
+</pre>
+</div>
+<div class="section" id="developing-worker-task-functions">
+<h2>Developing worker task functions</h2>
+<p>Worker task functions are IDL functions that perform the processing you wish to
+carry out in parallel on the compute machine.</p>
+<p>A worker function:</p>
+<ol class="arabic simple">
+<li>Takes the description of a task to perform as an IDL structure, where the
+fields of the structure represents the input parameters for an individual
+application task.</li>
+<li>Returns a structure representing the output details of the task performed.</li>
+</ol>
+<p>The Job Parallel Framework knows nothing about the implementation of worker
+task functions, nor the format of the chosen task structures. It simply passes
+a structure into the worker function and expects a structure to be returned.</p>
+<p>Complex worker task functions might require more information than the task list
+to direct processing. The Job Parallel Framework provides the
+<a href="#id7"><span class="problematic" id="id8">`parse_worker_command_line_args`_</span></a> helper routine that will retrieve commandline
+parameters passed to the parent worker process that called the task function.
+In most cases this additional information is not required.</p>
+<div class="section" id="worker-task-function-example">
+<h3>Worker task function example</h3>
+<p>Imagine we have some IDL code that sums two vector arrays stored in a pair of
+IDL save files, then finds the mean and standard deviation of the result.</p>
+<p>We might implement this as follows[#sms_pro]_:</p>
+<pre class="literal-block">
+pro sum_mean_stddev, fname_arrayA, fname_arrayB, m, s
+    restore, fname_arrayA
+    restore, fname_arrayB
+    m=mean(A+B)
+    s=stddev(A+B)
+end
+</pre>
+<table class="docutils footnote" frame="void" id="sms-pro" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>This procedure and its documentation are in
+<tt class="docutils literal">examples/tutorial/sum_mean_stddev.pro</tt></td></tr>
+</tbody>
+</table>
+<p>Now imagine we have thousands of such tasks we wish to perform, and we want to
+use the Job Parallel Framework to perform these individual tasks in parallel.
+To do this we must create a worker task function that implements an interface
+compatible with the Job Parallel Framework, in particular, that takes a task
+structure.</p>
+<p>The easiest way to do this is to write a wrapper task function around the core
+<tt class="docutils literal">sum_mean_stddev</tt> processing procedure as follows[#sms_pfw]_:</p>
+<pre class="literal-block">
+function sum_mean_stddev_pfw, task, subdivision
+    sum_mean_stddev, task.filename_A, task.filename_B, m, s
+    out_item={output, mean:m, stddev:s}
+    return, out_item
+end
+</pre>
+<table class="docutils footnote" frame="void" id="sms-pfw" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>This function and its documentation are in
+<tt class="docutils literal">examples/tutorial/sum_mean_stddev_pfw.pro</tt></td></tr>
+</tbody>
+</table>
+<p>Here we have chosen our task structure representation holding the names of the two
+input files to be:</p>
+<pre class="literal-block">
+task={task, filename_A:'', filename_B:''}
+</pre>
+<p>We will need to utilises this same structure when defining the job wide task
+list in order to <a class="reference internal" href="#generate-the-parallel-job">Generate the parallel job</a>.</p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">We have not called <a href="#id9"><span class="problematic" id="id10">`parse_worker_command_line_args`_</span></a> in the above example.
+We only need to call this function if we wish to access <em>additional</em> details
+about the overall worker process.</p>
+</div>
+</div>
+</div>
+<div class="section" id="generate-the-parallel-job">
+<h2>Generate the parallel job</h2>
+<p>Once we have created a worker function that can process a single task allocated
+to it by the Parallel Framework, we can generate parallel jobs using it.</p>
+<p>Achieving this requires three main steps:</p>
+<ol class="arabic simple">
+<li>Create an array of task structures representing the <strong>global</strong> task list
+that will be shared between parallel workers</li>
+<li><strong>Optionally</strong> load the desired job generator for the target parallel
+platform using the <a href="#id11"><span class="problematic" id="id12">`load_generator_plugin`_</span></a> function</li>
+<li>Generate parallel job files by calling the <a href="#id13"><span class="problematic" id="id14">`generate_parallel_job`_</span></a>
+function, specifying the global task list, worker task function, and desired
+number of parallel workers</li>
+</ol>
+<p>The <a href="#id15"><span class="problematic" id="id16">`generate_parallel_job`_</span></a> function will break the global task list into
+individual worker task lists based on the number of parallel workers requested,
+and generate all the scripts and files required to launch the parallel worker processes
+on the target platform. When the job is run, the worker processes will call on
+the specified worker task function to process each of its assigned tasks.</p>
+<div class="section" id="job-generation-example">
+<h3>Job generation example</h3>
+<div class="section" id="global-task-list">
+<h4>Global task list</h4>
+<p>We will first create an array of appropriate structures and populate them with
+the global list of tasks.</p>
+<p>As discussed in the <a class="reference internal" href="#worker-task-function-example">Worker task function example</a> section, each task will be
+represented by the structure[#task_list]_:</p>
+<pre class="literal-block">
+t={task, filename_A:'', filename_B:''}
+</pre>
+<p>Which holds the pair of file paths for the IDL save files operated on in each task.</p>
+<p>Lets assume we have daily input data for a 31 day study, stored in the
+directory <tt class="docutils literal">/research/studyresults/</tt> on the target compute machine. And that
+each pair of files is named <tt class="docutils literal">&lt;D&gt;_male.sav</tt> and <tt class="docutils literal">&lt;D&gt;_female.sav</tt>, where
+<tt class="docutils literal">&lt;D&gt;</tt> is a number representing the day of the study these files hold results
+for.</p>
+<p>The code for populating the global task list might then look like this[task_list]_:</p>
+<pre class="literal-block">
+g_task_list=REPLICATE({task}, 31)
+g_task_list.filename_A=&quot;/research/studyresults/&quot;+STRTRIM(STRING(INDGEN(31)),2)+&quot;_male.sav&quot;
+g_task_list.filename_B=&quot;/research/studyresults/&quot;+STRTRIM(STRING(INDGEN(31)),2)+&quot;_female.sav&quot;
+</pre>
+<table class="docutils footnote" frame="void" id="task-list" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>This example code can be found in
+<tt class="docutils literal">example/tutorial/create_task_list.pro</tt> and run from IDL with
+<tt class="docutils literal">g_task_list=create_task_list()</tt></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="selecting-job-generator">
+<h4>Selecting job generator</h4>
+<p>The Job Parallel Framework supports a potentially unlimited number of parallel
+platforms through user definable job generator plugins.</p>
+<p>The framework is distributed with generators for Linux PBS and PBS array jobs,
+and <strong>the PBS generator</strong> <tt class="docutils literal">pbs_job_generator</tt> <strong>is loaded by default</strong> when
+<tt class="docutils literal">load_par_framework</tt> is called.</p>
+<p>To change from the default generator, get a list of available generators and
+their descriptions using the helper function <a href="#id17"><span class="problematic" id="id18">`discover_generator_plugins`_</span></a>. And
+load one by passing its identifier string to the <a href="#id19"><span class="problematic" id="id20">`load_generator_plugin`_</span></a>
+function, e.g. the default:</p>
+<pre class="literal-block">
+load_generator_plugin, plugin_ident=&quot;pbs_job_generator&quot;
+</pre>
+</div>
+<div class="section" id="generating-the-job">
+<h4>Generating The Job</h4>
+<p>To generate the actual job files, we call <a href="#id21"><span class="problematic" id="id22">`generate_parallel_job`_</span></a> specifying the[#gen_job]_:</p>
+<ul class="simple">
+<li>global task list</li>
+<li>destination job file directory (optional: default current directory)</li>
+<li>name of the IDL worker task function to run on each task</li>
+<li>the desired number worker processes to utilise</li>
+</ul>
+<pre class="literal-block">
+generate_parallel_job, task_params=g_task_list, job_dir=&quot;./parallel_job&quot;, $
+                       work_func=&quot;sum_mean_stddev_pfw&quot;, n_workers=8
+</pre>
+<table class="docutils footnote" frame="void" id="gen-job" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td>This example code can be found in
+<tt class="docutils literal">example/tutorial/create_parallel_job.pro</tt> and run from IDL with
+<tt class="docutils literal">create_parallel_job, g_task_list=g_task_list</tt></td></tr>
+</tbody>
+</table>
+<p>You will now find a number of files in the <tt class="docutils literal">parallel_job</tt> directory required
+to run the job in parallel on a compute machine.</p>
+</div>
+<div class="section" id="staging-data-and-program-files">
+<h4>Staging data and program files</h4>
+<div class="section" id="data-files">
+<h5>Data files</h5>
+<p>The Job Parallel Framework knows little about the application's task
+functions or structures (see <a href="#id23"><span class="problematic" id="id24">`Developing worker functions`_</span></a>). It doesn't even
+know if strings in the task structure represent files! e.g.
+<tt class="docutils literal">g_task_list.filename_A</tt> and <tt class="docutils literal">g_task_list.filename_B</tt> in our example.</p>
+<p>Therefore, local data files named in the global tasks list are not staged
+automatically to the compute system. If your task structure refers to data files,
+it is your responsibility to ensure they are available at the specified location
+on the compute machine.</p>
+<p>The <a href="#id25"><span class="problematic" id="id26">`generate_parallel_job`_</span></a> procedure provides a primitive mechanism to assist
+with this through its <tt class="docutils literal">bundle_data</tt> and <tt class="docutils literal">data_dest</tt> parameters.
+<tt class="docutils literal">bundle_data</tt> accepts an array of filename strings to copy to the generated
+job directory, while <tt class="docutils literal">data_dest</tt> specifies a relative subdirectory of the job
+directory to copy the files in to. One can then refer to these data files
+from the global task list using filename paths relative to the job directory.</p>
+<p>For example, the <tt class="docutils literal">gen_test_data</tt> procedure in the
+<tt class="docutils literal">example/tutorial/data/gen_test_data.pro</tt> file will output some data files
+in to <tt class="docutils literal">example/tutorial/data/research/studyresults</tt> for testing our parallel
+<tt class="docutils literal">sum_mean_stddev</tt> job.</p>
+<p>We can then modify our previously created <tt class="docutils literal">g_task_list</tt> and
+<tt class="docutils literal">generate_parallel_job</tt> call to ensure these files are copied to the job
+directory and used in calculations[#gen_job_data]_:</p>
+<pre class="literal-block">
+g_task_list.filename_A=&quot;.&quot;+g_task_list.filename_A
+g_task_list.filename_B=&quot;.&quot;+g_task_list.filename_B
+generate_parallel_job, task_params=g_task_list, job_dir=&quot;./parallel_job&quot;, $
+                       work_func=&quot;sum_mean_stddev_pfw&quot;, n_workers=8, $
+                       bundle_data=FILE_SEARCH(&quot;data/research/studyresults/*.sav&quot;),$
+                       data_dest=&quot;research/studyresults&quot;
+</pre>
+<table class="docutils footnote" frame="void" id="gen-job-data" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[5]</td><td>This example code can be found in
+<tt class="docutils literal">example/tutorial/create_parallel_job_data.pro</tt> and run from IDL with
+<tt class="docutils literal">create_parallel_job_data, g_task_list=g_task_list</tt></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="program-files">
+<h5>Program files</h5>
+<p>By default the Framework <strong>will</strong> copy <tt class="docutils literal">.pro</tt> (source) and/or <tt class="docutils literal">.sav</tt>
+(compiled) module files to the job directory, for worker task functions named in
+the call to <a href="#id27"><span class="problematic" id="id28">`generate_parallel_job`_</span></a>. But will not copy every module or code
+file this function depends on.</p>
+<p>You must ensure that either:</p>
+<ol class="arabic simple">
+<li><tt class="docutils literal">.pro</tt> or <tt class="docutils literal">.sav</tt> files of all code/libraries required to run your worker
+functions are installed on the compute machine and visible on the IDL or GDL
+search path (includes the job directory).</li>
+<li>the compiled <tt class="docutils literal">.sav</tt> file for you functions include all dependencies within
+the file (see IDL documentation) prior to calling <a href="#id29"><span class="problematic" id="id30">`generate_parallel_job`_</span></a>.</li>
+</ol>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">The option selected depends on the execution environment and license used to
+run the parallel jobs. e.g. IDL runtime licence only permits <tt class="docutils literal">.sav</tt> (option
+1 or 2) while GDL only supports <tt class="docutils literal">.pro</tt> (option 1 only)</p>
+</div>
+<p>To assit with <em>option 1</em> <a href="#id31"><span class="problematic" id="id32">`generate_parallel_job`_</span></a> provides a <tt class="docutils literal">bundle_prog</tt>
+parameter to specify an array of filename strings (particularly IDL <tt class="docutils literal">.pro</tt> and
+<tt class="docutils literal">.sav</tt> files) to copy to the job directory. These files are copied to the base
+<tt class="docutils literal">job_dir</tt>, as this will be the first location checked in the IDL &amp; GDL search
+paths.</p>
+<p><a href="#id33"><span class="problematic" id="id34">`generate_parallel_job`_</span></a> has no mechanism to assit with <em>option 2</em>. This is
+achieved via the method you use to compile you <tt class="docutils literal">.sav</tt> files.</p>
+<div class="section" id="option-1-example">
+<h6>Option 1 example</h6>
+<p>For <a href="#id35"><span class="problematic" id="id36">`sum_mean_stddev_pfw`_</span></a> to run correctly under GDL, it will require access to
+the source <tt class="docutils literal">.pro</tt> file containing <a href="#id37"><span class="problematic" id="id38">`sum_mean_stddev`_</span></a>. <a href="#id39"><span class="problematic" id="id40">`generate_parallel_job`_</span></a>
+will not copy this additional source file to the job directory automatically. We
+can ensure it does via the <tt class="docutils literal">bundle_prog</tt> argument[#gen_job_prog]_:</p>
+<pre class="literal-block">
+generate_parallel_job, task_params=g_task_list, job_dir=&quot;./parallel_job&quot;, $
+                       work_func=&quot;sum_mean_stddev_pfw&quot;, n_workers=8, $
+                       bundle_data=FILE_SEARCH(&quot;data/research/studyresults/*.sav&quot;),$
+                       data_dest=&quot;research/studyresults&quot;, $
+                       bundle_prog=[&quot;sum_mean_stddev.pro&quot;]
+</pre>
+<table class="docutils footnote" frame="void" id="gen-job-prog" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[6]</td><td>This example code can be found in
+<tt class="docutils literal">example/tutorial/create_parallel_job_prog.pro</tt> and run from IDL with
+<tt class="docutils literal">create_parallel_job_prog, g_task_list=g_task_list</tt></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="option-2-example">
+<h6>Option 2 example</h6>
+<p>To ensure the <a href="#id41"><span class="problematic" id="id42">`sum_mean_stddev_pfw`_</span></a> task function runs correctly using IDL, we
+could compile it and all its dependencies into a <tt class="docutils literal">.sav</tt> file, and rely on
+<a href="#id43"><span class="problematic" id="id44">`generate_parallel_job`_</span></a> to copy the <tt class="docutils literal">.sav</tt> file to the job
+directory[#gen_job_comp]_ (compilation not available in GDL):</p>
+<pre class="literal-block">
+RESOLVE_ROUTINE, &quot;sum_mean_stddev_pfw&quot;, /IS_FUNCTION, /COMPILE_FULL_FILE
+RESOLVE_ALL, RESOLVE_FUNCTION=SUM_MEAN_STDDEV_PFW, /CONTINUE_ON_ERROR
+SAVE, /ROUTINES, filename=&quot;sum_mean_stddev_pfw.sav&quot;
+generate_parallel_job, task_params=g_task_list, job_dir=&quot;./parallel_job&quot;, $
+                       work_func=&quot;sum_mean_stddev_pfw&quot;, n_workers=8, $
+                       bundle_data=FILE_SEARCH(&quot;data/research/studyresults/*.sav&quot;),$
+                       data_dest=&quot;research/studyresults&quot;
+</pre>
+<table class="docutils footnote" frame="void" id="gen-job-comp" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[7]</td><td>This example code can be found in
+<tt class="docutils literal">example/tutorial/create_parallel_job_comp</tt> and run from IDL with
+<tt class="docutils literal">create_parallel_job_comp, g_task_list=g_task_list</tt></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-the-job-on-a-parallel-computer">
+<h2>Run the job on a parallel computer</h2>
+<p>To run the job the <tt class="docutils literal">parallel_job</tt> directory must be placed in a location
+accessible to the compute machine running the job. If you have not copied the
+job directory to the target machine's file systems, you will need to do so
+following the procedures available for your operating system and the compute
+machine.</p>
+<p>Once the job directory is accessible from the compute machine, change to the job
+directory and run the control script, whose name will match the <tt class="docutils literal">job_name</tt>
+passed to <a href="#id45"><span class="problematic" id="id46">`generate_parallel_job`_</span></a> (default <tt class="docutils literal">pfwjob</tt>), e.g. (here we assume
+Linux):</p>
+<pre class="literal-block">
+&gt; cd parallel_job
+&gt; ./pfwjob.sh
+</pre>
+<p>The control script may also take various commandline parameters depending on
+the generator plugin used. You can check available options/parameters using:</p>
+<pre class="literal-block">
+&gt; ./pfwjob.sh --help
+</pre>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">Linux parallel jobs may contain a <tt class="docutils literal">job_env.sh</tt> file in the
+<tt class="docutils literal">job_dir</tt>. This is the location to place shell specific environment step up
+required by your worker processes.</p>
+</div>
+</div>
+</div>
+<div class="system-messages section">
+<h1>Docutils System Messages</h1>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 17); <em><a href="#id2">backlink</a></em></p>
+Unknown target name: &quot;quick reference&quot;.</div>
+<div class="system-message" id="id3">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 17); <em><a href="#id4">backlink</a></em></p>
+Unknown target name: &quot;user guide&quot;.</div>
+<div class="system-message" id="id5">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 17); <em><a href="#id6">backlink</a></em></p>
+Unknown target name: &quot;reference guide&quot;.</div>
+<div class="system-message" id="id7">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 55); <em><a href="#id8">backlink</a></em></p>
+Unknown target name: &quot;parse_worker_command_line_args&quot;.</div>
+<div class="system-message" id="id9">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 105); <em><a href="#id10">backlink</a></em></p>
+Unknown target name: &quot;parse_worker_command_line_args&quot;.</div>
+<div class="system-message" id="id11">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 118); <em><a href="#id12">backlink</a></em></p>
+Unknown target name: &quot;load_generator_plugin&quot;.</div>
+<div class="system-message" id="id13">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 120); <em><a href="#id14">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+<div class="system-message" id="id15">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 124); <em><a href="#id16">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+<div class="system-message" id="id17">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 169); <em><a href="#id18">backlink</a></em></p>
+Unknown target name: &quot;discover_generator_plugins&quot;.</div>
+<div class="system-message" id="id19">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 169); <em><a href="#id20">backlink</a></em></p>
+Unknown target name: &quot;load_generator_plugin&quot;.</div>
+<div class="system-message" id="id21">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 178); <em><a href="#id22">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+<div class="system-message" id="id23">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 201); <em><a href="#id24">backlink</a></em></p>
+Unknown target name: &quot;developing worker functions&quot;.</div>
+<div class="system-message" id="id25">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 211); <em><a href="#id26">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+<div class="system-message" id="id27">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 240); <em><a href="#id28">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+<div class="system-message" id="id29">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 250); <em><a href="#id30">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+<div class="system-message" id="id31">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 258); <em><a href="#id32">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+<div class="system-message" id="id33">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 264); <em><a href="#id34">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+<div class="system-message" id="id35">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 269); <em><a href="#id36">backlink</a></em></p>
+Unknown target name: &quot;sum_mean_stddev_pfw&quot;.</div>
+<div class="system-message" id="id37">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 269); <em><a href="#id38">backlink</a></em></p>
+Unknown target name: &quot;sum_mean_stddev&quot;.</div>
+<div class="system-message" id="id39">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 269); <em><a href="#id40">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+<div class="system-message" id="id41">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 286); <em><a href="#id42">backlink</a></em></p>
+Unknown target name: &quot;sum_mean_stddev_pfw&quot;.</div>
+<div class="system-message" id="id43">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 286); <em><a href="#id44">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+<div class="system-message" id="id45">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">tutorial.rst</tt>, line 311); <em><a href="#id46">backlink</a></em></p>
+Unknown target name: &quot;generate_parallel_job&quot;.</div>
+</div>
+</div>
+</body>
+</html>
