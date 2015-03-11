@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
 <title>IDL Job Parallel Framework</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 7514 2012-09-14 14:27:12Z milde $
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
@@ -313,6 +313,21 @@ table.docutils th.field-name, table.docinfo th.docinfo-name {
   white-space: nowrap ;
   padding-left: 0 }
 
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
 h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
 h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
   font-size: 100% }
@@ -372,20 +387,19 @@ reStructuredText</a> to pretty document formats.</td>
 <hr class="docutils" />
 <div class="section" id="introduction">
 <h1><a class="toc-backref" href="#id3">Introduction</a></h1>
-<p id="start-intro">A generic framework developed for generating job parallel <tt class="docutils literal">jobs</tt> <a class="footnote-reference" href="#id2" id="id1">[1]</a> for
+<p id="start-short-overview">A generic framework developed for generating job parallel <tt class="docutils literal">jobs</tt> <a class="footnote-reference" href="#id2" id="id1">[1]</a> for
 parallel platforms based on a user defined (calling application) set of
 preprocessing, work, and postprocessing IDL executables or routines, as well as
 a list of application tasks to perform with parallel workers.</p>
-<p>Different target parallel platforms are supported via user definable job
-generator plugins.</p>
-<p>The parallel job can be configured and generated on any <em>controller</em> (alt.
-<em>client</em>) machine running IDL using the Job Parallel Framework API, for execution
-on a <em>remote</em> parallel machine supported by the chosen plugin. The generated
-job directory can then be copied to the remote parallel machine, and the job
-executed in a standalone fashion.</p>
+<p>Different target parallel platforms are supported via job generator plugins.</p>
+<p>The parallel job can be configured and generated on <em>any</em> machine running IDL
+or GDL, for execution on a <em>remote</em> parallel machine supported by the chosen
+plugin. The generated job directory can then be copied to the remote parallel
+machine, and the job executed in a standalone fashion.</p>
 <div class="note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <em>client</em> and <em>remote</em> machines could potentially be the same machine.</p>
+<p class="last">The machines used for generation and execution could potentially be the same
+machine.</p>
 </div>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -396,7 +410,7 @@ level parallelism&quot; as opposed to a finer grained parallelism</td></tr>
 </table>
 </div>
 <div class="section" id="software-requirements-and-files">
-<span id="end-intro"></span><h1><a class="toc-backref" href="#id4">Software requirements and files</a></h1>
+<span id="end-short-overview"></span><h1><a class="toc-backref" href="#id4">Software requirements and files</a></h1>
 <div class="section" id="environment-and-licensing-requirements">
 <h2><a class="toc-backref" href="#id5">Environment and licensing requirements</a></h2>
 <dl class="docutils">
@@ -405,12 +419,7 @@ level parallelism&quot; as opposed to a finer grained parallelism</td></tr>
 <li>IDL + IDL Development Licence</li>
 </ul>
 </dd>
-<dt>Client Runtime Usage</dt>
-<dd><ul class="first last simple">
-<li>IDL + IDL Runtime Licence minimum</li>
-</ul>
-</dd>
-<dt>Remote Job Execution</dt>
+<dt>Job Generation (Client) and Execution (Remote)</dt>
 <dd><ul class="first last simple">
 <li>IDL + IDL Runtime Licence</li>
 <li>GDL (optional alternative, see below)</li>
@@ -421,20 +430,13 @@ level parallelism&quot; as opposed to a finer grained parallelism</td></tr>
 source GDL implementation of the IDL language and environment. The <strong>REMOTE</strong>
 user application to be run on the parallel machine must support IDL versions
 &lt;7.1 (at time of writing) to utilise GDL.</p>
-<div class="important">
-<p class="first admonition-title">Important</p>
-<p class="last">Unfortunately, the Job Parallel Framework API currently requires
-functionality not provided by GDL to switch between job generator plugins.
-Therefore, the <strong>CONTROLLER/CLIENT</strong> user application can not be run using
-GDL.</p>
-</div>
 </div>
 <div class="section" id="collecting-required-packages">
 <h2><a class="toc-backref" href="#id6">Collecting required packages</a></h2>
 <p>You will required the source packages to compile this software. Which can be
-downloaded from the Subversion source code repository at:</p>
+downloaded from the GitHub source code repository via:</p>
 <pre class="literal-block">
-https://svnserv.csiro.au/svn/dom039/Parallel_Framework/trunk
+git clone https://github.com/csiro-scientific-computing/parallel_framework.git
 </pre>
 </div>
 </div>
@@ -484,12 +486,6 @@ the Parallel_Framwork's <tt class="docutils literal">src/plugins/</tt> directory
 on demanded by <tt class="docutils literal">par_framework.sav</tt> to generate different type of job
 output. They should not be called directly by user applications.</dd>
 </dl>
-<div class="admonition-optional admonition">
-<p class="first admonition-title">OPTIONAL</p>
-<p class="last"><em>Not compatible with GDL usage!</em>
-To provide a binary only installation of the framework, delete the package's
-<tt class="docutils literal">src</tt> directory after compilation.</p>
-</div>
 <p><tt class="docutils literal">build_docs</tt> generates IDL html help files from the header comment blocks
 of functions and procedures in the IDL Job Parallel Framework source code, and
 places them in the <tt class="docutils literal">doc/reference</tt> directory.</p>
@@ -509,11 +505,6 @@ for the real directory path.</p>
 <p class="last">The resulting <tt class="docutils literal">IDL_PATH</tt> must contain the special token <tt class="docutils literal">&lt;IDL_DEFAULT&gt;</tt>
 for IDL internal use. It is recommend you include this token when appending
 to <tt class="docutils literal">IDL_PATH</tt>.</p>
-</div>
-<div class="tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">If providing a binary only installation of the framework, then
-<tt class="docutils literal"><span class="pre">+&lt;path_to_Parallel_Framework&gt;/src</span></tt> can be omitted from the <tt class="docutils literal">IDL_PATH</tt></p>
 </div>
 <div class="section" id="on-linux-derivative-systems">
 <h4><a class="toc-backref" href="#id11">On Linux derivative systems</a></h4>
@@ -565,10 +556,6 @@ in the &quot;Variable value&quot; text box (<strong>note absence of leading semi
 </div>
 <div class="section" id="setting-gdl-path">
 <h3><a class="toc-backref" href="#id13">Setting GDL_PATH</a></h3>
-<p>If you will be using GDL to run remote parallel workers, then you <strong>must</strong>
-install the Job Parallel Framework <strong>source code</strong> on the remote machine. i.e. you
-cannot provide the optional <strong>binary only</strong> installation mentioned in
-<a class="reference internal" href="#compiling-the-job-parallel-framework">Compiling the Job Parallel Framework</a>.</p>
 <p>Append <tt class="docutils literal"><span class="pre">+&lt;path_to_Parallel_Framework&gt;/src</span></tt> to the <tt class="docutils literal">GDL_PATH</tt> environment
 variable following similar steps to those outlined in <a class="reference internal" href="#setting-idl-path">Setting IDL_PATH</a>, e.g.
 for Linux bash:</p>
@@ -590,7 +577,7 @@ code and documentation</a> section, please do so.</p>
 <h2><a class="toc-backref" href="#id15">User Manual &amp; Tutorial</a></h2>
 <p>The Job Parallel Framework can be used in two modes:</p>
 <dl class="docutils">
-<dt>By the <strong>client/controller</strong> application</dt>
+<dt>By the <strong>generator application</strong></dt>
 <dd>To generate parallel jobs using the <tt class="docutils literal">generate_parallel_job</tt> procedure</dd>
 <dt>By the <strong>remote</strong> worker(s)</dt>
 <dd>To take advantage of Job Parallel Framework helper functions which simplify

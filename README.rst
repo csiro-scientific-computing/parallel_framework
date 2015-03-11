@@ -46,10 +46,7 @@ Environment and licensing requirements
 Compilation
     - IDL + IDL Development Licence
 
-Client Runtime Usage
-    - IDL + IDL Runtime Licence minimum
-
-Remote Job Execution
+Job Generation (Client) and Execution (Remote)
     - IDL + IDL Runtime Licence
     - GDL (optional alternative, see below)
 
@@ -58,18 +55,12 @@ source GDL implementation of the IDL language and environment. The **REMOTE**
 user application to be run on the parallel machine must support IDL versions
 <7.1 (at time of writing) to utilise GDL.
 
-.. IMPORTANT::
-   Unfortunately, the Job Parallel Framework API currently requires
-   functionality not provided by GDL to switch between job generator plugins.
-   Therefore, the **CONTROLLER/CLIENT** user application can not be run using
-   GDL.
-
 Collecting required packages
 ----------------------------
 You will required the source packages to compile this software. Which can be
-downloaded from the Subversion source code repository at::
+downloaded from the GitHub source code repository via::
 
-    https://svnserv.csiro.au/svn/dom039/Parallel_Framework/trunk
+    git clone https://github.com/csiro-scientific-computing/parallel_framework.git
 
 Compilation and Setup
 =====================
@@ -118,12 +109,6 @@ Job generator plugins (``bin/plugins/*.sav``)
     on demanded by ``par_framework.sav`` to generate different type of job
     output. They should not be called directly by user applications.
 
-.. admonition:: OPTIONAL
-
-   *Not compatible with GDL usage!*
-   To provide a binary only installation of the framework, delete the package's
-   ``src`` directory after compilation.
-
 ``build_docs`` generates IDL html help files from the header comment blocks
 of functions and procedures in the IDL Job Parallel Framework source code, and
 places them in the ``doc/reference`` directory.
@@ -145,10 +130,6 @@ for the real directory path.
    The resulting ``IDL_PATH`` must contain the special token ``<IDL_DEFAULT>``
    for IDL internal use. It is recommend you include this token when appending
    to ``IDL_PATH``.
-
-.. TIP::
-   If providing a binary only installation of the framework, then
-   ``+<path_to_Parallel_Framework>/src`` can be omitted from the ``IDL_PATH``
 
 On Linux derivative systems
 +++++++++++++++++++++++++++
@@ -196,11 +177,6 @@ In the ``Systems Properties`` menu, accessible via
 
 Setting GDL_PATH
 ~~~~~~~~~~~~~~~~
-If you will be using GDL to run remote parallel workers, then you **must**
-install the Job Parallel Framework **source code** on the remote machine. i.e. you
-cannot provide the optional **binary only** installation mentioned in
-`Compiling the Job Parallel Framework`_.
-
 Append ``+<path_to_Parallel_Framework>/src`` to the ``GDL_PATH`` environment
 variable following similar steps to those outlined in `Setting IDL_PATH`_, e.g.
 for Linux bash::
